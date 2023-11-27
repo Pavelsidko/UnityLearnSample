@@ -8,7 +8,6 @@ public class TransparentModule : MonoBehaviour
 {
     [SerializeField]
     private float changeSpeed;
-
     private float defaultAlpha;
     private Material mat;
     private bool toDefault;
@@ -19,6 +18,10 @@ public class TransparentModule : MonoBehaviour
         defaultAlpha = mat.color.a;
         toDefault = false;
         ActivateModule();
+<<<<<<< HEAD
+=======
+
+>>>>>>> d58fbb18e378f95e8e491b8c6d80ea90bb3e0062
     }
 
     public void ActivateModule()
