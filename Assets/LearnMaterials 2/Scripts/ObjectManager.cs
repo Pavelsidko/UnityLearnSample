@@ -4,25 +4,17 @@ using UnityEngine;
 
 public class ObjectManager : MonoBehaviour
 {
-    public List<SampleScript> sampleScripts;
-    RotationScript RotationScript = new RotationScript();
+    [SerializeField]
+    private List<SampleScript> _scripts;
 
-    // Start is called before the first frame update
     void Start()
     {
-        ActivateAllObjects();
+        _scripts.AddRange(FindObjectsOfType<SampleScript>());
     }
-    public void ActivateAllObjects()
-    {
-        sampleScripts.Add(RotationScript);
 
-        foreach (var script in sampleScripts)
-        {
-            script.Use();
-        }
-    }
-    // Update is called once per frame
-    void Update()
+    public void UseAll()
     {
+        foreach (var script in _scripts)
+            script.Use();
     }
 }

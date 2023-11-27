@@ -36,6 +36,11 @@ public class ScalerModule : MonoBehaviour
         ActivateModule();
     }
 
+    private void Stop()
+    {
+        ReturnToDefaultState();
+    }
+
     private IEnumerator ScaleCoroutine(Vector3 target)
     {
         Vector3 start = myTransform.lossyScale;
