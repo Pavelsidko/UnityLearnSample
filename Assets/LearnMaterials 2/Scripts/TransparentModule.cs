@@ -6,8 +6,8 @@ using UnityEngine;
 [HelpURL("https://docs.google.com/document/d/1Cmm__cbik5J8aHAI6PPaAUmEMF3wAcNo3rpgzsYPzDM/edit?usp=sharing")]
 public class TransparentModule : MonoBehaviour
 {
+    [SerializeField]
     private float changeSpeed;
-
     private float defaultAlpha;
     private Material mat;
     private bool toDefault;
@@ -17,6 +17,8 @@ public class TransparentModule : MonoBehaviour
         mat = GetComponent<Renderer>().material;
         defaultAlpha = mat.color.a;
         toDefault = false;
+        ActivateModule();
+
     }
 
     public void ActivateModule()
